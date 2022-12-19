@@ -1,0 +1,125 @@
+\documentclass[10pt]{article}
+
+\usepackage[left=20mm, right=20mm, top=20mm, bottom=20mm]{geometry} \usepackage{polski}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{mathtools}
+
+
+\title{\textbf{Narzedzia dla programistów ćw. 4\\
+Tworzenie dokumentów \LaTeX}}
+\author{Grupa №11}
+\date{}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\clearpage
+\tableofcontents
+\listoffigures
+\listoftables
+\clearpage
+\thispagestyle{empty}
+
+\section*{{\huge Ćwiczenie 4}}
+\section*{{\huge Tworzenie dokumentów \LaTeX}}
+\section{Rozpoczęcie pracy}
+Ćwiczenie napisane za pomocą edytora \emph{VIM} oraz tex interpretera \emph{pdflatex}.
+\section{Krój pisma}
+\begin{enumerate}
+\item Napisałem fragment czcionką \textbf{pogrubioną}.
+\item Napisałem fragment czcionką \emph{pochylona}.
+\item Napisałem fragment tekstu \textit{kursywą}.
+\item Napisałem fragment tekstu \underline{z podkreśleniem}.
+\item Za pomocą polecenia \verb|\verb!| okresliłem fragment tekstu zamieszczony jako ,,\verb|maszynopis|''.
+\item Użyłem większego rozmiaru czcionku dla {\huge wybranego fragmentu tekstu}.
+\item Użyłem mniejszego rozmiaru czcionki dla {\footnotesize wybranego fragmentu tekstu}.
+\end{enumerate}
+\section{Środowiska}
+\begin{enumerate}[resume]
+\item Zdefiniowałem wyliczenie
+\begin{enumerate}
+\item punkt 1
+\item punkt 2
+\item punkt 3
+\end{enumerate}
+\item Określiłem wypunktowanie
+\begin{itemize}
+\item punkt 1
+\item punkt 2
+\item punkt 3
+\end{itemize}
+\item Zdefiniowałem środowisko rysunku wyrównanego do środka strony oraz podpisu pod nim.
+\begin{center}
+\begin{equation}
+\includegraphics[width=19mm, height=19mm]{tex.png}
+\label{ris:da}
+\end{equation}
+\captionof{figure}{\textit{{\TeX} logo}}
+\end{center}
+\clearpage
+\item Utworzyłem środowisko zawierające tabelę o 3 kołumnach i 5 wierszach. Dodaj tytuł tabeli(nad nią). Określiłem etykietę do tabeli.
+\begin{table}[h]
+\caption{\textit{Przykładowy tytuł tabeli}}
+\label{tab:da}
+\begin{center}
+\begin{equation}
+\begin{tabular}{|c|c|c|}
+    \hline
+    A & B & C \\
+    \hline
+    D & E & F \\
+    \hline
+    G & H & I \\
+    \hline
+    J & K & L \\
+    \hline
+    M & N & O \\
+    \hline
+\end{tabular}
+\end{equation}
+\end{center}
+\end{table}
+\end{enumerate}
+\section{Wzory matematyczne}
+\begin{enumerate}[resume]
+\item Napisałem wzór na pole koła. Zdefiniowałem mu etykieta:
+\begin{center}
+\begin{equation}
+S = \pi r^{2}
+\end{equation}
+\end{center}
+\item Napisałem wzór na wyróżnik $\Delta$ trójmianu kwadratowego oraz miejsca zerowe w postaci ułamka zwykłego.
+\begin{center}
+\begin{equation}
+\label{formula}
+\Delta = b^{2} - 4\cdot a\cdot c
+\end{equation}
+\begin{equation}
+x_1 = \frac{-b -\sqrt{\Delta}}{2\cdot a}
+\end{equation}
+\begin{equation}
+x_2 = \frac{-b +\sqrt{\Delta}}{2\cdot a}
+\end{equation}
+\end{center}
+\end{enumerate}
+\section{Odwołania}
+\begin{enumerate}[resume]
+\item Napisałem zdanie wykorzystujące odwołania do etykiet zdefiniowanych w punktach \hyperref[ris:da]{10}, \hyperref[tab:da]{11}, \hyperref[formula]{12}.
+\item Utworzyłem przpis dolny w dokumencie pojawiający się na końcu strony.
+\footnote{Przypis dolny}
+\end{enumerate}
+\section{Znaki specjalne}
+\begin{enumerate}[resume]
+\item Zakodowałem w tekście występowanie następujących znaków: \textdollar, \#, \%, \^{}, \&, ", [\, ]\ , $ \backslash $, \~{}, $\lbrace, \rbrace, \mid, \textunderscore, @$.
+\end{enumerate}
+\section{Spisy}
+\begin{enumerate}[resume]
+\item Dodałem spis treści dokumentu, spis rysunków i spis tabel.
+\end{enumerate}
+\end{document}
