@@ -1,125 +1,169 @@
-\documentclass[10pt]{article}
+\documentclass[a4paper, 12pt]{book}
 
-\usepackage[left=20mm, right=20mm, top=20mm, bottom=20mm]{geometry} \usepackage{polski}
-\usepackage{graphicx}
-\usepackage{xcolor}
-\usepackage{hyperref}
-\usepackage{caption}
+
+\usepackage{polski}
 \usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{enumitem}
-\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{blindtext}
+\usepackage{caption}
+\usepackage{lipsum}
+\usepackage{hyperref}
 
-
-\title{\textbf{Narzedzia dla programistów ćw. 4\\
-Tworzenie dokumentów \LaTeX}}
+\title{Narzedzia dla programistów ćw. 4\\Sprawozdanie\\Tworzenie dokumentów \LaTeX}
 \author{Grupa №11}
 \date{}
 
+
 \begin{document}
 \maketitle
-\thispagestyle{empty}
-\clearpage
 \tableofcontents
 \listoffigures
 \listoftables
-\clearpage
-\thispagestyle{empty}
 
-\section*{{\huge Ćwiczenie 4}}
-\section*{{\huge Tworzenie dokumentów \LaTeX}}
-\section{Rozpoczęcie pracy}
-Ćwiczenie napisane za pomocą edytora \emph{VIM} oraz tex interpretera \emph{pdflatex}.
-\section{Krój pisma}
+\part{To jest tytuł I części}
+\chapter{To jest tytuł rozdziału 1}
+
+
+\textbf{\blindtext \\ \\}
+\ldots
+
+\blindtext \\ \\
+\ldots
+\clearpage
+
+\section{To jest tytuł sekcji 1}
+\blindtext
+\subsection{To jest tutył podsekcji 1}
+\blindtext
+\subsection{To jest tytuł podsekcji 2}
+\blindtext
+\clearpage
+\section{Krój pisma} \label{pismo}
+Teraz będą przykłady użycia różnych krojów pisma. Odpowiedź do pkt. 4.2.
+
+\textbf{To jest przykładowe zdanie napisane czcionką pogrubioną.}
+
+\emph{To jest przykładowe zdanie napisane czcionką pochyloną.}
+
+\textit{To jest przykładowe zdanie napisane kursywą.}
+
+\underline{To jest przykładowe zdanie napisane z podkreśleniem.}
+
+\verb|To jest przykładowe zdanie napisane jako maszynopis.|
+
+Teraz będzie {\Large większy rozmiar czcionki.} Lub inaczej.
+
+Teraz będzie {\Large większy rozmiar czcionki.} Zobacz różnicę.
+
+Teraz będzie {\small mniejszy rozmiar czcionki.} Lub inaczej.
+
+Teraz będzie {\small mniejszy rozmiar czcionki.} Zobacz różnicę.
+
+\subsection{Środowiska}
+To będzie przykładowe wyliczenie:
 \begin{enumerate}
-\item Napisałem fragment czcionką \textbf{pogrubioną}.
-\item Napisałem fragment czcionką \emph{pochylona}.
-\item Napisałem fragment tekstu \textit{kursywą}.
-\item Napisałem fragment tekstu \underline{z podkreśleniem}.
-\item Za pomocą polecenia \verb|\verb!| okresliłem fragment tekstu zamieszczony jako ,,\verb|maszynopis|''.
-\item Użyłem większego rozmiaru czcionku dla {\huge wybranego fragmentu tekstu}.
-\item Użyłem mniejszego rozmiaru czcionki dla {\footnotesize wybranego fragmentu tekstu}.
+\item to po pierwsze, 
+\item to po drugie,
+\item po trzecie i już koniec
 \end{enumerate}
-\section{Środowiska}
-\begin{enumerate}[resume]
-\item Zdefiniowałem wyliczenie
-\begin{enumerate}
-\item punkt 1
-\item punkt 2
-\item punkt 3
-\end{enumerate}
-\item Określiłem wypunktowanie
+To będzie przykładowe wypunktowanie:
 \begin{itemize}
-\item punkt 1
-\item punkt 2
-\item punkt 3
+\item to po pierwsze,
+\item to po drugie,
+\item po trzecie i już koniec.
 \end{itemize}
-\item Zdefiniowałem środowisko rysunku wyrównanego do środka strony oraz podpisu pod nim.
+A teraz wstawiamy rysunek.
+
 \begin{center}
-\begin{equation}
-\includegraphics[width=19mm, height=19mm]{tex.png}
-\label{ris:da}
-\end{equation}
-\captionof{figure}{\textit{{\TeX} logo}}
+\includegraphics[width=95mm, height=125mm]{zakaz.jpg}
+\captionof{figure}{\textit{,,Kultowy rysunek naszego Wydziału''}}
+\label{rys:da}
 \end{center}
 \clearpage
-\item Utworzyłem środowisko zawierające tabelę o 3 kołumnach i 5 wierszach. Dodaj tytuł tabeli(nad nią). Określiłem etykietę do tabeli.
+A teraz wstawimy tabelę
 \begin{table}[h]
-\caption{\textit{Przykładowy tytuł tabeli}}
+\caption{\textit{Przykładowa tabela}}
 \label{tab:da}
 \begin{center}
-\begin{equation}
-\begin{tabular}{|c|c|c|}
-    \hline
-    A & B & C \\
-    \hline
-    D & E & F \\
-    \hline
-    G & H & I \\
-    \hline
-    J & K & L \\
-    \hline
-    M & N & O \\
-    \hline
+\begin{tabular}{| c c | c |}
+\hline
+t1 & t0 & data type\\
+\hline
+0 & 0 & \emph{bool}(\verb|B|)\\
+0 & 1 & -- \\
+1 & 0 & \emph{integer}(\verb|I|) \\
+1 & 1 & \emph{long}(\verb|L|)\\
+\hline
 \end{tabular}
-\end{equation}
 \end{center}
 \end{table}
-\end{enumerate}
-\section{Wzory matematyczne}
-\begin{enumerate}[resume]
-\item Napisałem wzór na pole koła. Zdefiniowałem mu etykieta:
-\begin{center}
+
+\subsection{Wzory matematyczne}
+Teraz napiszemy wzór na pole koła
 \begin{equation}
 S = \pi r^{2}
 \end{equation}
-\end{center}
-\item Napisałem wzór na wyróżnik $\Delta$ trójmianu kwadratowego oraz miejsca zerowe w postaci ułamka zwykłego.
-\begin{center}
+A teraz napiszemy wzór na wyróżnik $\Delta$ trójmianu kwadratowego
 \begin{equation}
 \label{formula}
-\Delta = b^{2} - 4\cdot a\cdot c
+\Delta = b^{2} - 4 \cdot a \cdot c
 \end{equation}
+oraz jego miejsca zerowe w postaci ułamka zwykłego.
 \begin{equation}
-x_1 = \frac{-b -\sqrt{\Delta}}{2\cdot a}
+x_1 = \frac{-b-\sqrt{\Delta}}{2\cdot a}
 \end{equation}
+
 \begin{equation}
-x_2 = \frac{-b +\sqrt{\Delta}}{2\cdot a}
+x_2 = \frac{-b+\sqrt{\Delta}}{2\cdot a}
 \end{equation}
-\end{center}
-\end{enumerate}
+\clearpage
+
+\chapter{To jest tytuł rozdziału 2}
 \section{Odwołania}
-\begin{enumerate}[resume]
-\item Napisałem zdanie wykorzystujące odwołania do etykiet zdefiniowanych w punktach \hyperref[ris:da]{10}, \hyperref[tab:da]{11}, \hyperref[formula]{12}.
-\item Utworzyłem przpis dolny w dokumencie pojawiający się na końcu strony.
-\footnote{Przypis dolny}
-\end{enumerate}
-\section{Znaki specjalne}
-\begin{enumerate}[resume]
-\item Zakodowałem w tekście występowanie następujących znaków: \textdollar, \#, \%, \^{}, \&, ", [\, ]\ , $ \backslash $, \~{}, $\lbrace, \rbrace, \mid, \textunderscore, @$.
-\end{enumerate}
-\section{Spisy}
-\begin{enumerate}[resume]
-\item Dodałem spis treści dokumentu, spis rysunków i spis tabel.
-\end{enumerate}
+Na rysunku \hyperref[rys:da]{1.1}, który pojawił się w rozdziale \hyperref[pismo]{1.2}, na stronie 14 pojawił się obrazek, jaki można zobaczyć na drzwiach dr inż. Dariusza Klepackiego, z którym spotkacie się w przyszłym semestrze. Jak nauczycie się matematyki w minimalnym stopniu, choćby wzór \hyperref[formula]{1.1}, który pojawił się w rozdziale \hyperref[pismo]{1.2} na stronie 13. Do tabeli \hyperref[tab:da]{1.1} z rozdziału \hyperref[pismo]{1.2} ze strony 15 już się nie odwołamy, bo czas zajęć dobiega końca.\footnote{Przypis dolny}
+\subsection{Znaki specjalne}
+Właśnie zakodowałem znaki specjalne:
+
+\textdollar, \#, \%, \^{}, \&, ", \verb|[|, \verb|]|, \textbackslash, \~{}, \{, \}, \vert.
+\subsection{Spisy}
+W miejsce, gdzie chcemy wstawić spisy treści, rysunków, tabel, należy wpisać odpowiednio trzy polecenia.\\
+\\
+\verb|\tableofcontents|\\
+\verb|\listoffigures|\\
+\verb|\listoftables|
+\clearpage
+\section{Sekcja 2}
+\subsection{Podsekcja 1}
+\subsection{Podsekcja 2}
+\part{To jest tytuł II części}
+\chapter{To jest tytuł rozdiału 3}
+\section{To jest tytuł sekcji 1}
+\subsection{To jest tytuł podsekcji 1}
+\subsection{To jest tytuł podsekcji 2}
+\section{Sekcja 2}
+\subsection{Podsekcja 1}
+\subsection{Podsekcja 2}
+\chapter{To jest tytuł rozdziału 4}
+\section{Sekcja 1}
+\subsection{Podsekcja 1}
+\subsection{Podsekcja 2}
+\section{Sekcja 2}
+\subsection{Podsekcja 1}
+\subsection{Podsekcja 2}
+\part{To jest tytuł III części}
+\chapter{To jest tytuł rozdziału 5}
+\section{To jest tytuł sekcji 1}
+\subsection{To jest tytuł podsekcji 1}
+\subsection{To jest tytuł podsekcji 2}
+\section{Sekcja 2}
+\subsection{Podsekcja 1}
+\subsection{Podsekcja 2}
+\chapter{To jest tytuł rozdziału 6}
+\section{Sekcja 1}
+\subsection{Podsekcja 1}
+\subsection{Podsekcja 2}
+\section{Sekcja 2}
+\subsection{Podsekcja 1}
+\subsection{Podsekcja 2}
+
 \end{document}
